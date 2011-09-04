@@ -4,7 +4,8 @@
 
 {% block content %}
     <h2>Image Uploaded!</h2>
-    <img src="{{ upload.image.url }}" width="50%"><br/>
+    <a href="{{ upload.image.url }}"><img src="{{ upload.image.url }}" width="50%"></a>
+    <br/>
 
     {% if message %}
         <h3 style="color:{{ color }};">{{ message }}</h3>

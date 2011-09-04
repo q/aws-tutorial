@@ -5,7 +5,8 @@
 {% block content %}
 {% for upload in filez %}
     {{ upload.upload_date }}<br>
-    <img src="{{ upload.image.url }}" width="80%"><br/>
+    <a href="{{ upload.image.url }}"><img src="{{ upload.image.url }}" width="80%"></a>
+    <br/>
 {% endfor %}
 
 {% endblock %}

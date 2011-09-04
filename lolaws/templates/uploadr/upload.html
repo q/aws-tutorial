@@ -12,7 +12,8 @@
 
 {% for upload in recent_uploads %}
     {{ upload.upload_date }}<br>
-    <img src="{{ upload.image.url }}" width="50%"><br/>
+    <a href="{{ upload.image.url }}"><img src="{{ upload.image.url }}" width="50%"></a>
+    <br/>
     <br/>
 {% endfor %}
 
