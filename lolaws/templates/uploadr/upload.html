@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}- uploadr{% endblock %}
+
+{% block content %}
+    <form method="POST" action="" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="pretty-button">TO 'THE CLOUD!'</button>
+    </form>
+<br/>
+
+{% for upload in recent_uploads %}
+    {{ upload.upload_date }}<br>
+    <img src="{{ upload.image.url }}" width="50%"><br/>
+    <br/>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>lolaws {% block title %}lolaws{% endblock %}</title>
+        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/960.css">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="container_16 clearfix">
+                    <a href="{% url uploadr-upload %}">Upload Image!</a> | <a href="{% url uploadr-all %}">View All!</a>
+                </div>
+            </nav>
+        </header>
+        <div class="container container_16">
+            <div class="grid_16">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+    </body>
+</html>

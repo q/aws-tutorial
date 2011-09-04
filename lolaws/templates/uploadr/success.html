@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}- success!{% endblock %}
+
+{% block content %}
+    <h2>Image Uploaded!</h2>
+    <img src="{{ upload.image.url }}" width="50%"><br/>
+
+    {% if message %}
+        <h3 style="color:{{ color }};">{{ message }}</h3>
+    {% endif %}
+    <h3>Email this image to someone:</h3>
+    <form method="POST" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="pretty-button">GO-GO-GADGET SPAM!</button>
+    </form>
+
+    <a href="{% url uploadr-upload %}">Upload Another!</a>
+{% endblock %}
