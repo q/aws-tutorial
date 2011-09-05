@@ -2,7 +2,7 @@
 import os
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
-DEBUG = True
+DEBUG = True 
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -62,7 +62,8 @@ STATIC_ROOT = "static_files/"
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = 'http://BUCKETNAME.s3.amazonaws.com/'
+#STATIC_URL = 'http://BUCKETNAME.s3.amazonaws.com/'
+STATIC_URL = '/static/'
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
@@ -122,8 +123,9 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
 
     # external
-    'storages',
-    'django_ses',
+    #'storages',
+    #'django_ses',
+    'django_extensions',
 
     # disapp
     'lolaws.core',
@@ -156,23 +158,23 @@ LOGGING = {
 
 
 # s3 storage
-STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+#STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
 #DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
-DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
+#DEFAULT_FILE_STORAGE = 'storages.backends.s3.S3Storage'
 
-AWS_ACCESS_KEY_ID = "SETME"
-AWS_SECRET_ACCESS_KEY = "SETME"
-AWS_STORAGE_BUCKET_NAME = "SETME"
-STATIC_URL = 'http://'+AWS_STORAGE_BUCKET_NAME+'.s3.amazonaws.com/'
-ADMIN_MEDIA_PREFIX = STATIC_URL + "admin/"
-from S3 import CallingFormat
-AWS_CALLING_FORMAT = CallingFormat.SUBDOMAIN
-AWS_HEADERS = {
-    'Cache-Control': 'max-age=86400',
-}
+#AWS_ACCESS_KEY_ID = "SETME"
+#AWS_SECRET_ACCESS_KEY = "SETME"
+#AWS_STORAGE_BUCKET_NAME = "SETME"
+#STATIC_URL = 'http://'+AWS_STORAGE_BUCKET_NAME+'.s3.amazonaws.com/'
+#ADMIN_MEDIA_PREFIX = STATIC_URL + "admin/"
+#from S3 import CallingFormat
+#AWS_CALLING_FORMAT = CallingFormat.SUBDOMAIN
+#AWS_HEADERS = {
+#    'Cache-Control': 'max-age=86400',
+#}
 
-EMAIL_BACKEND = 'django_ses.SESBackend'
+#EMAIL_BACKEND = 'django_ses.SESBackend'
 DEFAULT_FROM_EMAIL = 'lolaws <YOUR@EMAIL.LOL>'
 EMAIL_SUBJECT_PREFIX = '[lolaws] '
 
