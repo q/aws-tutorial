@@ -36,17 +36,15 @@ nav a {
 }
 
 footer {
-    position: relative;
-	margin-top: -50px;
-	clear:both;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
     background: #333333;
     color: #aaaaaa;
-    height: 28px;
-	clear:both;
 }
 
 footer div.container_16 {
-
+    vertical-align: middle;
 }
 
 div.main {
