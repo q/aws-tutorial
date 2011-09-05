@@ -2,19 +2,30 @@
     <head>
         <title>lolaws {% block title %}lolaws{% endblock %}</title>
         <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/960.css">
+    <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css">
     </head>
     <body>
-        <header>
-            <nav>
-                <div class="container_16 clearfix">
-                    <a href="{% url uploadr-upload %}">Upload Image!</a> | <a href="{% url uploadr-all %}">View All!</a>
+        <div id="wrap">
+            <header>
+                <div class="container_16">
+                    <h1 class="grid_4">LOL AWS</h1>
+                    <nav class="grid_6">
+                        <a href="{% url uploadr-upload %}">Upload Image!</a>
+                        <a href="{% url uploadr-all %}">View All!</a>
+                    </nav>
+                    <div class="clearfix"></div>
                 </div>
-            </nav>
-        </header>
-        <div class="container container_16">
-            <div class="grid_16">
-                {% block content %}{% endblock %}
+            </header>
+            <div class="container_16 main">
+                <div>
+                    {% block content %}{% endblock %}
+                </div>
             </div>
         </div>
+        <footer>
+            <div class="container_16 clearfix">
+                <h5>&copy; A H8MCHN PRODUCTION </h5>
+            </div>
+        </footer>
     </body>
 </html>
