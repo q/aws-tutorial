@@ -63,14 +63,14 @@ def pack():
     # awful hack
     if not os.path.isfile('./fabfile.py'):
         utils.abort('Please run this from the root of the project (miscasa/.)')
-    local('cd ../; tar -pczf /{0}.tar.gz .'.format(env.project, env.dev_root))
+    local('cd ../; tar -pczf /tmp/{0}.tar.gz .'.format(env.project, env.dev_root))
 #    local('cd ../; git archive HEAD --format=tar | gzip > {0}.tar.gz'.format(env.project)) #lolaws.tar.gz
 
 def transfer():
     """ Send code archive to server for deployment. """
-    if not os.path.isfile('/{0}.tar.gz'.format(env.project)):
+    if not os.path.isfile('/tmp/{0}.tar.gz'.format(env.project)):
         utils.abort('Could not find code archive to send to server.')
-    put('/{0}.tar.gz'.format(env.project), '/tmp/')
+    put('/tmp/{0}.tar.gz'.format(env.project), '/tmp/')
     clean_local()
 
 def unpack():
