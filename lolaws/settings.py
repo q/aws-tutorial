@@ -62,7 +62,7 @@ STATIC_ROOT = "static_files/"
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = 'http://BUCKETNAME.s3.amazonaws.com/'
+STATIC_URL = '/static/'
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
@@ -122,7 +122,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
 
     # external
-    'storages',
+#    'storages',
     'django_ses',
 
     # disapp
@@ -166,17 +166,17 @@ LOGGING = {
 #AWS_STORAGE_BUCKET_NAME = "SETME"
 #STATIC_URL = 'http://'+AWS_STORAGE_BUCKET_NAME+'.s3.amazonaws.com/'
 #ADMIN_MEDIA_PREFIX = STATIC_URL + "admin/"
-from S3 import CallingFormat
+#from S3 import CallingFormat
 #AWS_CALLING_FORMAT = CallingFormat.SUBDOMAIN
 #AWS_HEADERS = {
 #    'Cache-Control': 'max-age=86400',
 #}
 
 #EMAIL_BACKEND = 'django_ses.SESBackend'
-DEFAULT_FROM_EMAIL = 'lolaws <YOUR@EMAIL.LOL>'
-EMAIL_SUBJECT_PREFIX = '[lolaws] '
+#DEFAULT_FROM_EMAIL = 'lolaws <YOUR@EMAIL.LOL>'
+#EMAIL_SUBJECT_PREFIX = '[lolaws] '
 
-try:
-    from local_settings import *
-except ImportError:
-    pass
+#try:
+#    from local_settings import *
+#except ImportError:
+#    pass
