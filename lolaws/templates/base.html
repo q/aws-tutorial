@@ -5,19 +5,21 @@
     <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/main.css">
     </head>
     <body>
-        <header>
-            <div class="container_16">
-                <h1 class="grid_4">LOL AWS</h1>
-                <nav class="grid_6">
-                    <a href="{% url uploadr-upload %}">Upload Image!</a>
-                    <a href="{% url uploadr-all %}">View All!</a>
-                </nav>
-                <div class="clearfix"></div>
-            </div>
-        </header>
-        <div class="container_16 main">
-            <div>
-                {% block content %}{% endblock %}
+        <div id="wrap">
+            <header>
+                <div class="container_16">
+                    <h1 class="grid_4">LOL AWS</h1>
+                    <nav class="grid_6">
+                        <a href="{% url uploadr-upload %}">Upload Image!</a>
+                        <a href="{% url uploadr-all %}">View All!</a>
+                    </nav>
+                    <div class="clearfix"></div>
+                </div>
+            </header>
+            <div class="container_16 main">
+                <div>
+                    {% block content %}{% endblock %}
+                </div>
             </div>
         </div>
         <footer>

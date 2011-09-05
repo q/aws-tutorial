@@ -10,7 +10,8 @@
             <button type="submit" class="pretty-button">TO 'THE CLOUD!'</button>
         </form>
     </div>
-    <div class="grid_8">
+    <h4>Recent Uploads</h4>
+    <div class="grid_8 picture_frame">
         {% for upload in recent_uploads %}
             {{ upload.upload_date }}<br>
             <a href="{{ upload.image.url }}"><img src="{{ upload.image.url }}" width="50%"></a><br>
