@@ -80,10 +80,6 @@ def unpack():
         with cd(env.dev_root):
             sudo('tar xf {0}'.format(env.code_pack_location))
 
-def clean_remote_pack():
-    """ activate VM and run collectstatic """
-    run_in_virtualenv("cd {0}; python manage.py collectstatic --noinput --link --settings={1}".format(env.code_root, env.settings_name))
-
 def install_requirements():
     """ Install requirements """
     with cd(env.dev_root):
@@ -113,7 +109,7 @@ def syncdb():
 
 def collectstatic():
     with cd(env.code_root):
-            run_in_virtualenv("python manage.py collectstatic --noinput --link --settings={0}".format(env.settings_name))
+        run_in_virtualenv("python manage.py collectstatic --noinput --link --settings={0}".format(env.settings_name))
 
 
 def deploy():
