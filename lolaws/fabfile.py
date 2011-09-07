@@ -105,11 +105,11 @@ def setup():
 def syncdb():
     """ Run Django syncdb on remote maachine. """
     with cd(env.code_root):
-        run_in_virtualenv('python manage.py syncdb')
+        run_in_virtualenv('python manage.py syncdb --noinput')
 
 def collectstatic():
     with cd(env.code_root):
-        run_in_virtualenv("python manage.py collectstatic --noinput --link --settings={0}".format(env.settings_name))
+        run_in_virtualenv("python manage.py collectstatic --noinput --settings={0}".format(env.settings_name))
 
 
 def deploy():
